@@ -1,59 +1,130 @@
+<!doctype html>
+
 <!DOCTYPE html>
-<html lang="nl">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FDND Visitekaartje</title>
-    <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <body>
-    
-    <article>
-      
-      <header>
-        
-        <h1>Jane Doe</h1>
-        
-        <p><em>Creatieve Frontend Developer in spé</em></p>
-        
-        <button>
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <title>Wijzig layout</title>
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
-            <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
-            <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
-            <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
-          </svg>
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M15 19v-2a2 2 0 0 1 2 -2h2"></path>
-            <path d="M15 5v2a2 2 0 0 0 2 2h2"></path>
-            <path d="M5 15h2a2 2 0 0 1 2 2v2"></path>
-            <path d="M5 9h2a2 2 0 0 0 2 -2v-2"></path>
-          </svg>
-        </button>
-        
-      </header>
-  
-      <img src="assets/creative-coder.png" alt="" width="800" height="800">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dorien 🖖</title>
 
-      <dl>
-        <dt>HTML</dt>
-        <dd>🏆🏆🏆</dd>
-        
-        <dt>CSS</dt>
-        <dd>🏆🏆</dd>
-        
-        <dt>JavaScript</dt>
-        <dd>🏆🏆🏆🏆</dd>
-      </dl>
-  
-      <p>Het WEB is te gek! <br> Met HTML, CSS en JavaScript kan ik vette, interactieve web apps maken.</p>
-      
-    </article>
-
-    <script src="scripts/script.js"></script>
+    <!--
+        Visitekaartje, Dorien Drees heyoooo 👾
     
-  </body>
+    -->
+
+    <style type="text/css">
+        html {
+            font-size: 10px;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .card {
+            width: 90%;
+            max-width: 60rem;
+            position: relative;
+        }
+
+        @keyframes slidein {
+            from {
+                transform: rotate(-180deg);
+            }
+
+            to {
+                transform: rotate(180deg);
+            }
+        }
+
+        .trut {
+            width: 13rem;
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            animation: 3s infinite alternate slidein;
+        }
+
+        h1 {
+            width: 25rem;
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1:after,
+        h1:before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 12rem;
+            position: absolute;
+            bottom: -1.3rem;
+            left: -4rem;
+            z-index: -1;
+            background: white;
+            border-left: 3px solid black;
+            border-top: 3px solid black;
+            border-right: 3px solid black;
+            transform: rotate(-35deg) skew(15deg);
+        }
+
+        h1:after {
+            left: auto;
+            right: -4rem;
+            height: 14rem;
+            transform: rotate(50deg) skew(-15deg);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .card__info {
+            padding: 2rem;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            bottom: 13rem;
+            right: -4rem;
+            background: goldenrod;
+            border: 5px solid goldenrod;
+            border-radius: 50%;
+            font-size: 2rem;
+            font-family: monospace;
+        }
+
+        .card__info:after {
+            content: '';
+            display: block;
+            width: 1rem;
+            height: 10rem;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            z-index: -1;
+            background: saddlebrown;
+            border-left: 3px solid saddlebrown;
+            border-right: 3px solid saddlebrown;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>
+            <img src="dorien.png" alt="Dorien">
+        </h1>
+        <ul class="card__info">
+            <li>Code, love, laugh</li>
+        </ul>
+        <img src="flag.gif" alt="Progress pride flag">
+        <img src="trut.png" alt="Trutfonds" class="trut">
+    </div>
+</body>
 </html>
